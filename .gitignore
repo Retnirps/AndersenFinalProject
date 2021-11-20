@@ -1,8 +1,6 @@
 *.iml
-*.jar
 .idea
 .gradle
-gradle/wrapper/gradle-wrapper.properties
 /local.properties
 .DS_Store
 /build
