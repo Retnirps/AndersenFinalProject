@@ -1,7 +1,9 @@
 package com.majestadev.rickandmortyguide.main.fragment.locations
 
+import android.os.Build
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -90,6 +92,7 @@ class LocationsFragment : Fragment(), SearchView.OnQueryTextListener {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.filter_menu, menu)
 
@@ -97,13 +100,20 @@ class LocationsFragment : Fragment(), SearchView.OnQueryTextListener {
         val searchView = searchItem.actionView as SearchView
         searchView.isSubmitButtonEnabled = true
         searchView.setOnQueryTextListener(this)
+
+        val filterItem = menu.findItem(R.id.action_filter)
+        if (filterFlag && locationFilter != null) {
+            filterItem.setIcon(R.drawable.ic_filter_active)
+        }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.filter_menu) {
+        if (item.itemId == R.id.action_filter) {
             filterFlag = if (filterFlag) {
                 startSearchJob()
                 locationFilter = null
+                item.setIcon(R.drawable.ic_filter)
                 false
             } else {
                 findNavController().navigate(R.id.action_mainFragment_to_filterLocationsFragment)

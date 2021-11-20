@@ -97,13 +97,19 @@ class EpisodesFragment : Fragment(), SearchView.OnQueryTextListener {
         val searchView = searchItem.actionView as SearchView
         searchView.isSubmitButtonEnabled = true
         searchView.setOnQueryTextListener(this)
+
+        val filterItem = menu.findItem(R.id.action_filter)
+        if (filterFlag && episodeFilter != null) {
+            filterItem.setIcon(R.drawable.ic_filter_active)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.filter_menu) {
+        if (item.itemId == R.id.action_filter) {
             filterFlag = if (filterFlag) {
                 startSearchJob()
                 episodeFilter = null
+                item.setIcon(R.drawable.ic_filter)
                 false
             } else {
                 findNavController().navigate(R.id.action_mainFragment_to_filterEpisodesFragment)
