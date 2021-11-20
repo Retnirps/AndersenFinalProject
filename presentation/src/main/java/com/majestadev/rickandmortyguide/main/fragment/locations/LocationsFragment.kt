@@ -103,6 +103,7 @@ class LocationsFragment : Fragment(), SearchView.OnQueryTextListener {
         if (item.itemId == R.id.filter_menu) {
             filterFlag = if (filterFlag) {
                 startSearchJob()
+                locationFilter = null
                 false
             } else {
                 findNavController().navigate(R.id.action_mainFragment_to_filterLocationsFragment)
