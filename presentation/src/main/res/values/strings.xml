@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Rick and Morty Guide</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rick_gif">Rick gif</string>
+    <string name="rick_nand_nmorty_nguide">Rick\nand\nMorty\nGuide</string>
+    <string name="characters">Characters</string>
+    <string name="episodes">Episodes</string>
+    <string name="locations">Locations</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="character_image">character image</string>
+    <string name="residents">Residents</string>
+    <string name="name">Name:</string>
+    <string name="status">Status:</string>
+    <string name="species">Species:</string>
+    <string name="type">Type:</string>
+    <string name="gender">Gender:</string>
+    <string name="filter">Filter</string>
+    <string name="episode_code">Episode Code</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="type_">Type</string>
+    <string name="name_">Name</string>
+    <string name="dimension">Dimension</string>
+    <string name="species_">Species</string>
+    <string name="action_search">Action Search</string>
+    <string name="nothing_to_show">Nothing to show</string>
+
+    <string-array name="status_array">
+        <item />
+        <item>alive</item>
+        <item>dead</item>
+        <item>unknown</item>
+    </string-array>
+    <string-array name="gender_array">
+        <item />
+        <item>female</item>
+        <item>male</item>
+        <item>genderless</item>
+        <item>unknown</item>
+    </string-array>
+</resources>

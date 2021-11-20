@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.main.MainFragment"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_episodeDetailsFragment"
+            app:destination="@id/episodeDetailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_locationDetailsFragment"
+            app:destination="@id/locationDetailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_filterCharactersFragment"
+            app:destination="@id/filterCharactersFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_filterEpisodesFragment"
+            app:destination="@id/filterEpisodesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_filterLocationsFragment"
+            app:destination="@id/filterLocationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.characters.details.CharacterDetailsFragment"
+        android:label="Character Details"
+        tools:layout="@layout/fragment_character_details" >
+        <action
+            android:id="@+id/action_characterDetailsFragment_to_episodeDetailsFragment"
+            app:destination="@id/episodeDetailsFragment" />
+        <action
+            android:id="@+id/action_characterDetailsFragment_to_locationDetailsFragment"
+            app:destination="@id/locationDetailsFragment" />
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodeDetailsFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.episodes.details.EpisodeDetailsFragment"
+        android:label="Episode Details"
+        tools:layout="@layout/fragment_episode_details" >
+        <action
+            android:id="@+id/action_episodeDetailsFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+        <argument
+            android:name="episodeId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailsFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.locations.details.LocationDetailsFragment"
+        android:label="Location Details"
+        tools:layout="@layout/fragment_location_details" >
+        <action
+            android:id="@+id/action_locationDetailsFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+        <argument
+            android:name="locationId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterCharactersFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.characters.filter.FilterCharactersFragment"
+        android:label="Characters Filter"
+        tools:layout="@layout/fragment_filter_characters" />
+    <fragment
+        android:id="@+id/filterEpisodesFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.episodes.filter.FilterEpisodesFragment"
+        android:label="Episodes Filter"
+        tools:layout="@layout/fragment_filter_episodes" />
+    <fragment
+        android:id="@+id/filterLocationsFragment"
+        android:name="com.majestadev.rickandmortyguide.main.fragment.locations.filter.FilterLocationsFragment"
+        android:label="Locations Filter"
+        tools:layout="@layout/fragment_filter_locations" />
+</navigation>
